@@ -24,7 +24,7 @@ export const NotesList = ({
   onToggleFavorite,
 }: NotesListProps) => {
   return (
-    <div className="relative flex min-h-screen flex-col gap-[34px] pb-[89px]">
+    <div className="relative flex min-h-screen flex-col gap-[34px] pb-[calc(89px+var(--safe-area-bottom))]">
       <header className="space-y-[13px]">
         <div className="space-y-[4px]">
           <p className="text-[12px] uppercase tracking-[0.4em] text-ink-muted">{copy.appName}</p>
@@ -56,7 +56,7 @@ export const NotesList = ({
       <button
         type="button"
         onClick={onCreate}
-        className="fixed bottom-[21px] right-[21px] flex h-[55px] w-[55px] items-center justify-center rounded-full border border-line bg-washi text-[20px] text-sumi shadow-soft transition duration-300 hover:-translate-y-[2px] md:right-[calc(50%-360px+21px)]"
+        className="fixed bottom-[calc(21px+var(--safe-area-bottom))] right-[21px] flex h-[55px] w-[55px] items-center justify-center rounded-full border border-line bg-washi text-[20px] text-sumi shadow-soft transition duration-300 hover:-translate-y-[2px] md:right-[calc(50%-360px+21px)]"
         aria-label={copy.newNote}
       >
         +

@@ -14,6 +14,12 @@
 
 ---
 
+## Phase 4 状態
+
+Phase 4にて最終調整・デバッグ・build確認まで完了し、公開準備済みです。
+
+---
+
 ## ターゲット
 
 **日本向け**
@@ -97,13 +103,13 @@
 npm install
 ```
 
-## 開発起動
+## 起動方法（開発）
 
 ```bash
 npm run dev
 ```
 
-## ビルド
+## build方法
 
 ```bash
 npm run build
@@ -138,3 +144,12 @@ Phase 3のMVP完成後にのみ、必要であればCloudflare Pagesの設定を
 
 - Build command: `npm run build`
 - Build output directory: `dist`
+
+## Cloudflare Pages 設定
+
+```txt
+Build command: npm run build
+Build output directory: dist
+```
+
+未接続の場合は、上記設定で新規プロジェクトを作成し、mainブランチを接続してください。
