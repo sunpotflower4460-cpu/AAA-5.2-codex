@@ -1,0 +1,89 @@
+import type { Note } from '../types/note'
+import { copy } from '../lib/i18n'
+import { formatNoteDate } from '../lib/date'
+
+type NoteEditorProps = {
+  note: Note
+  onBack: () => void
+  onTitleChange: (value: string) => void
+  onBodyChange: (value: string) => void
+  onToggleFavorite: () => void
+  onDelete: () => void
+}
+
+export const NoteEditor = ({
+  note,
+  onBack,
+  onTitleChange,
+  onBodyChange,
+  onToggleFavorite,
+  onDelete,
+}: NoteEditorProps) => {
+  const handleDelete = () => {
+    const confirmed = window.confirm(`${copy.deleteConfirm}\n${copy.deleteConfirmEn}`)
+    if (confirmed) {
+      onDelete()
+    }
+  }
+
+  return (
+    <div className="flex min-h-screen flex-col gap-[21px] pb-[34px]">
+      <header className="flex items-center justify-between">
+        <button
+          type="button"
+          onClick={onBack}
+          className="rounded-full border border-line bg-paper px-[13px] py-[6px] text-[12px] text-sumi shadow-sm"
+          aria-label={copy.back}
+        >
+          ← {copy.back}
+        </button>
+        <div className="text-right text-[11px] text-ink-muted">
+          <p>{copy.saved}</p>
+          <p>{copy.savedEn}</p>
+        </div>
+      </header>
+
+      <div className="space-y-[13px]">
+        <input
+          value={note.title}
+          onChange={(event) => onTitleChange(event.target.value)}
+          placeholder={copy.untitled}
+          aria-label="タイトル"
+          className="w-full rounded-[13px] border border-line bg-paper px-[13px] py-[8px] font-serif text-[20px] text-sumi shadow-sm outline-none focus:border-gold"
+        />
+
+        <div className="flex items-center justify-between text-[12px] text-ink-muted">
+          <span>{formatNoteDate(note.updatedAt, note.locale ?? 'ja')}</span>
+          <div className="flex items-center gap-[8px]">
+            <button
+              type="button"
+              onClick={onToggleFavorite}
+              className={`rounded-full border border-line px-[10px] py-[4px] text-[11px] transition duration-300 ${
+                note.isFavorite ? 'text-gold' : 'text-ink-muted'
+              }`}
+              aria-label={note.isFavorite ? copy.unfavorite : copy.favorite}
+            >
+              {note.isFavorite ? '★' : '☆'} {copy.favorite}
+            </button>
+            <button
+              type="button"
+              onClick={handleDelete}
+              className="rounded-full border border-line px-[10px] py-[4px] text-[11px] text-vermilion transition duration-300"
+              aria-label={copy.delete}
+            >
+              {copy.delete}
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <textarea
+        value={note.body}
+        onChange={(event) => onBodyChange(event.target.value)}
+        aria-label="本文"
+        className="min-h-[55vh] w-full flex-1 resize-none rounded-[21px] border border-line bg-paper px-[21px] py-[21px] text-[15px] leading-[1.618] text-sumi shadow-sm outline-none focus:border-gold"
+        placeholder="..."
+      />
+    </div>
+  )
+}

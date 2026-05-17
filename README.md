@@ -88,3 +88,53 @@
 | [docs/mvp-spec.md](docs/mvp-spec.md) | MVP仕様 |
 | [docs/development-phases.md](docs/development-phases.md) | 開発フェーズ |
 | [.github/copilot-instructions.md](.github/copilot-instructions.md) | Cloud Agent / Copilot向け作業ルール |
+
+---
+
+## セットアップ
+
+```bash
+npm install
+```
+
+## 開発起動
+
+```bash
+npm run dev
+```
+
+## ビルド
+
+```bash
+npm run build
+```
+
+必要に応じて以下も利用できます。
+
+```bash
+npm run lint
+```
+
+---
+
+## MVP機能一覧
+
+- メモ一覧
+- メモ作成
+- メモ編集
+- メモ削除
+- 自動保存
+- 検索
+- お気に入り
+- localStorage保存
+- iPhone向けレスポンシブUI
+- 日本語/英語を意識した文言
+
+---
+
+## Cloudflare Pages デプロイ方針
+
+Phase 3のMVP完成後にのみ、必要であればCloudflare Pagesの設定を行います。
+
+- Build command: `npm run build`
+- Build output directory: `dist`
