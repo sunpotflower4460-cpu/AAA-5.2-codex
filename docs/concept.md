@@ -1,4 +1,7 @@
-# 残心 — コンセプト / Concept
+# 残心 / Zanshin — コンセプト / Concept
+
+> 書いたあとにも、心がそこに残るメモ帳。  
+> A note-taking app where the heart lingers, even after the writing ends.
 
 ## 残心とは
 
