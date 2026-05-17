@@ -27,12 +27,12 @@ export const NoteEditor = ({
   }
 
   return (
-    <div className="flex min-h-screen flex-col gap-[21px] pb-[34px]">
+    <div className="flex min-h-screen flex-col gap-[21px] pb-[calc(34px+var(--safe-area-bottom))]">
       <header className="flex items-center justify-between">
         <button
           type="button"
           onClick={onBack}
-          className="rounded-full border border-line bg-paper px-[13px] py-[6px] text-[12px] text-sumi shadow-sm"
+          className="rounded-full border border-line bg-paper px-[13px] py-[8px] text-[12px] text-sumi shadow-sm"
           aria-label={copy.back}
         >
           ← {copy.back}
@@ -81,7 +81,7 @@ export const NoteEditor = ({
         value={note.body}
         onChange={(event) => onBodyChange(event.target.value)}
         aria-label="本文"
-        className="min-h-[55vh] w-full flex-1 resize-none rounded-[21px] border border-line bg-paper px-[21px] py-[21px] text-[15px] leading-[1.618] text-sumi shadow-sm outline-none focus:border-gold"
+        className="min-h-[55vh] w-full flex-1 resize-none rounded-[21px] border border-line bg-paper px-[21px] py-[21px] text-[16px] leading-[1.618] text-sumi shadow-sm outline-none focus:border-gold"
         placeholder="..."
       />
     </div>

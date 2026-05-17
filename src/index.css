@@ -12,6 +12,8 @@
   --color-vermilion: #b14a36;
   --color-line: rgba(31, 27, 24, 0.12);
   --color-shadow: rgba(31, 27, 24, 0.08);
+  --safe-area-top: env(safe-area-inset-top, 0px);
+  --safe-area-bottom: env(safe-area-inset-bottom, 0px);
 }
 
 * {
