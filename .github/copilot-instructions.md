@@ -110,6 +110,17 @@ If a feature makes the app:
 
 ---
 
+## MVP Exclusions (Do NOT add)
+
+- Login or accounts
+- Cloud sync
+- AI features
+- Payments or subscriptions
+- Complex tag management
+- Collaboration
+
+---
+
 ## Key Documents
 
 | File | Purpose |
