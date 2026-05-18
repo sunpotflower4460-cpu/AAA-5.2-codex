@@ -34,7 +34,12 @@ export const NoteCard = ({ note, onSelect, onToggleFavorite }: NoteCardProps) =>
         <div className="flex items-start justify-between gap-[21px]">
           <div className="space-y-[8px]">
             <div className="flex items-center gap-[6px]">
-              {note.isFavorite && <span className="h-[6px] w-[6px] rounded-full bg-gold opacity-70" aria-hidden="true" />}
+              {note.isFavorite && (
+                <>
+                  <span className="h-[6px] w-[6px] rounded-full bg-gold opacity-70" aria-hidden="true" />
+                  <span className="sr-only">{copy.favorite}</span>
+                </>
+              )}
               <h3 className="font-serif text-[18px] text-sumi">{title}</h3>
             </div>
             <p className="max-h-[52px] overflow-hidden text-[13px] leading-[1.7] text-ink-muted">

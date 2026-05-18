@@ -12,6 +12,14 @@
   --color-vermilion: #b14a36;
   --color-line: rgba(31, 27, 24, 0.12);
   --color-shadow: rgba(31, 27, 24, 0.08);
+  --washi-gold-glow-width: 1200px;
+  --washi-gold-glow-height: 600px;
+  --washi-gold-glow-y: -200px;
+  --washi-gold-opacity: 0.12;
+  --washi-indigo-glow-size: 800px;
+  --washi-indigo-glow-x: 15%;
+  --washi-indigo-glow-y: 20%;
+  --washi-indigo-opacity: 0.05;
   --safe-area-top: env(safe-area-inset-top, 0px);
   --safe-area-bottom: env(safe-area-inset-bottom, 0px);
 }
@@ -64,8 +72,17 @@
   min-height: 100vh;
   /* Gold glow, indigo wash, and paper-to-washi base for calm depth. */
   background:
-    radial-gradient(1200px 600px at 50% -200px, rgba(201, 166, 70, 0.12), transparent 60%),
-    radial-gradient(800px 800px at 15% 20%, rgba(36, 59, 83, 0.05), transparent 65%),
+    radial-gradient(
+      var(--washi-gold-glow-width) var(--washi-gold-glow-height) at 50% var(--washi-gold-glow-y),
+      rgba(201, 166, 70, var(--washi-gold-opacity)),
+      transparent 60%
+    ),
+    radial-gradient(
+      var(--washi-indigo-glow-size) var(--washi-indigo-glow-size) at var(--washi-indigo-glow-x)
+        var(--washi-indigo-glow-y),
+      rgba(36, 59, 83, var(--washi-indigo-opacity)),
+      transparent 65%
+    ),
     linear-gradient(180deg, var(--color-paper) 0%, var(--color-washi) 100%);
   overflow: hidden;
 }
