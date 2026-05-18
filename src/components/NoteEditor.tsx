@@ -84,7 +84,7 @@ export const NoteEditor = ({
         value={note.body}
         onChange={(event) => onBodyChange(event.target.value)}
         aria-label="本文"
-        className="min-h-[60vh] w-full flex-1 resize-none rounded-[24px] border border-line bg-paper px-[21px] py-[21px] text-[16px] leading-[1.85] text-sumi shadow-sm outline-none transition duration-300 focus:border-gold focus:shadow-[0_0_0_1px_var(--color-gold)]"
+        className="min-h-[60vh] w-full flex-1 resize-none rounded-[24px] border border-line bg-paper px-[21px] py-[21px] text-[16px] leading-[1.618] text-sumi shadow-sm outline-none transition duration-300 focus:border-gold focus:shadow-[0_0_0_1px_var(--color-gold)]"
         placeholder="..."
       />
     </div>

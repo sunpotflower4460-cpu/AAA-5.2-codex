@@ -25,15 +25,15 @@
     font-family: theme('fontFamily.sans');
   }
 
-body {
-  margin: 0;
-  background: var(--color-paper);
-  color: var(--color-sumi);
-  font-family: theme('fontFamily.sans');
-  letter-spacing: 0.02em;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-}
+  body {
+    margin: 0;
+    background: var(--color-paper);
+    color: var(--color-sumi);
+    font-family: theme('fontFamily.sans');
+    letter-spacing: 0.02em;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
 
   h1,
   h2,
@@ -62,6 +62,7 @@ body {
 .app-shell {
   position: relative;
   min-height: 100vh;
+  /* Gold glow, indigo wash, and paper-to-washi base for calm depth. */
   background:
     radial-gradient(1200px 600px at 50% -200px, rgba(201, 166, 70, 0.12), transparent 60%),
     radial-gradient(800px 800px at 15% 20%, rgba(36, 59, 83, 0.05), transparent 65%),
