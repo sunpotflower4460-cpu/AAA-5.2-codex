@@ -110,6 +110,6 @@
   z-index: 1;
 }
 
-.note-blade {
+.note-accent-line {
   background: linear-gradient(180deg, rgba(31, 27, 24, 0.25) 0%, rgba(31, 27, 24, 0.06) 100%);
 }

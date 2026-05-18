@@ -22,7 +22,7 @@ export const NoteCard = ({ note, onSelect, onToggleFavorite }: NoteCardProps) =>
 
   return (
     <article className="relative">
-      <span className="note-blade absolute left-[16px] top-[21px] h-[70%] w-[2px] rounded-full" aria-hidden="true" />
+      <span className="note-accent-line absolute left-[16px] top-[21px] h-[70%] w-[2px] rounded-full" aria-hidden="true" />
       <div
         role="button"
         tabIndex={0}
