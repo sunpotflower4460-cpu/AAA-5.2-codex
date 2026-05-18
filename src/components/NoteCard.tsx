@@ -42,7 +42,7 @@ export const NoteCard = ({ note, onSelect, onToggleFavorite }: NoteCardProps) =>
               )}
               <h3 className="font-serif text-[18px] text-sumi">{title}</h3>
             </div>
-            <p className="max-h-[52px] overflow-hidden text-[13px] leading-[1.7] text-ink-muted">
+            <p className="note-preview text-[13px] leading-[1.7] text-ink-muted">
               {preview}
             </p>
           </div>

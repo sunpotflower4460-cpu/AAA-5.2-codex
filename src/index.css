@@ -91,6 +91,7 @@
   content: '';
   position: absolute;
   inset: 0;
+  /* Keep the paper texture visible but restrained to protect whitespace. */
   background-image: repeating-linear-gradient(
       65deg,
       rgba(31, 27, 24, 0.03) 0,
@@ -129,4 +130,11 @@
 
 .note-accent-line {
   background: linear-gradient(180deg, rgba(31, 27, 24, 0.25) 0%, rgba(31, 27, 24, 0.06) 100%);
+}
+
+.note-preview {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
