@@ -25,15 +25,15 @@
     font-family: theme('fontFamily.sans');
   }
 
-  body {
-    margin: 0;
-    background: var(--color-paper);
-    color: var(--color-sumi);
-    font-family: theme('fontFamily.sans');
-    letter-spacing: 0.02em;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-  }
+body {
+  margin: 0;
+  background: var(--color-paper);
+  color: var(--color-sumi);
+  font-family: theme('fontFamily.sans');
+  letter-spacing: 0.02em;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
 
   h1,
   h2,
@@ -57,4 +57,58 @@
 
 #root {
   min-height: 100vh;
+}
+
+.app-shell {
+  position: relative;
+  min-height: 100vh;
+  background:
+    radial-gradient(1200px 600px at 50% -200px, rgba(201, 166, 70, 0.12), transparent 60%),
+    radial-gradient(800px 800px at 15% 20%, rgba(36, 59, 83, 0.05), transparent 65%),
+    linear-gradient(180deg, var(--color-paper) 0%, var(--color-washi) 100%);
+  overflow: hidden;
+}
+
+.app-shell::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+      65deg,
+      rgba(31, 27, 24, 0.03) 0,
+      rgba(31, 27, 24, 0.03) 1px,
+      transparent 1px,
+      transparent 7px
+    ),
+    repeating-linear-gradient(
+      145deg,
+      rgba(31, 27, 24, 0.02) 0,
+      rgba(31, 27, 24, 0.02) 1px,
+      transparent 1px,
+      transparent 9px
+    );
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.app-shell::after {
+  content: '';
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  top: -140px;
+  right: -120px;
+  border-radius: 9999px;
+  border: 1px solid rgba(201, 166, 70, 0.18);
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.app-shell__content {
+  position: relative;
+  z-index: 1;
+}
+
+.note-blade {
+  background: linear-gradient(180deg, rgba(31, 27, 24, 0.25) 0%, rgba(31, 27, 24, 0.06) 100%);
 }

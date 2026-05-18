@@ -7,7 +7,10 @@ type SearchBarProps = {
 
 export const SearchBar = ({ value, onChange }: SearchBarProps) => {
   return (
-    <div className="rounded-full border border-line bg-paper px-[21px] py-[8px] shadow-sm">
+    <div className="flex items-center gap-[8px] rounded-full border border-line bg-paper px-[21px] py-[10px] shadow-sm transition duration-300 focus-within:border-gold focus-within:shadow-[0_0_0_1px_var(--color-gold)]">
+      <span className="text-[12px] text-ink-muted" aria-hidden="true">
+        ⌕
+      </span>
       <input
         value={value}
         onChange={(event) => onChange(event.target.value)}
